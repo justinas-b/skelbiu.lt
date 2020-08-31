@@ -7,21 +7,16 @@ on:
     branches: [ master ]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    # - name: Build the Docker image
-    #   run: docker build . --file Dockerfile --tag justinas/skelbiu.lt:$(date +%s)
     - name: Build and push Docker images
       uses: docker/build-push-action@v1
       with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: justinasdemo/skelbiu.lt
+        username:   ${{ secrets.DOCKER_USERNAME }}
+        password:   ${{ secrets.DOCKER_PASSWORD }}
+        repository: ${{ secrets.DOCKER_REPO     }}
         tags: latest
         tag_with_ref: true
         tag_with_sha: true
