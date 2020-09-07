@@ -17,6 +17,6 @@
 
 ```
 docker build -t justinasb/skelbiu.lt:latest .
-docker run --rm -it justinas/skelbiu.lt:latest
+docker run --rm -it justinasb/skelbiu.lt:latest
 docker run justinasb/skelbiu.lt:latest python ./script.py $USERNAME $PASSWORD
 ```
